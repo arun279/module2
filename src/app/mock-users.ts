@@ -8,5 +8,6 @@ import { User } from './user';
 // ];
 
 export const USERS: User[] = [
-    { username: "arun", email: "arun@tcs.com", phone: 123456 }
+    { username: "arun", email: "arun@tcs.com", phone: 123456 },
+    { username: "kar", email: "kar@tcs.com", phone: 532455 }
 ];
