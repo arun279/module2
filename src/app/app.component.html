@@ -1,2 +1,10 @@
-<h1>Module 2</h1>
-<app-user></app-user>
+<!-- <h1>Module 2</h1>
+<app-admin (eventClicked)="userAdded($event)"></app-admin>
+<app-user></app-user> -->
+
+<div class="container login-container">
+    <div class="row">
+        <app-admin (eventClicked)="userAdded($event)"></app-admin>
+        <app-user></app-user>
+    </div>
+</div>
