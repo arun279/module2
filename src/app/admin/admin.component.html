@@ -1,18 +1,38 @@
 <!-- <p>admin works!</p>
 <button (click)="onClick('test', 'test', 123123)">Test</button> -->
-<div class="col-md-6 login-form-1">
-    <form>
+
+<!-- <div class="col-md-6 login-form-1"> -->
+    
+    <!-- <form>
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Your Username *" value="" />
+            <input type="text" class="form-control" placeholder="Your Username *" value="" #usernameinput />
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Your Email *" value="" />
+            <input type="text" class="form-control" placeholder="Your Email *" value="" #emailinput/>
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Your Phone *" value="" />
+            <input type="text" class="form-control" placeholder="Your Phone *" value="" #phoneinput/>
         </div>
         <div class="form-group">
-            <input type="submit" class="btnSubmit" (click)="onClick('test', 'test', 123123)" value="Add User" />
+            <input type="submit" class="btnSubmit" (click)="onClick(this.usernameinput.nativeElement.value, this.emailinput.nativeElement.value, this.phoneinput.nativeElement.value)" value="Add User" />
         </div>
-    </form>
-</div>
+    </form> -->
+
+<!-- </div> -->
+
+
+<form>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Your Username *"  id = "usernameinput" [(ngModel)]="usernameinput" name = "usernameinput" />
+    
+    
+        <input type="text" class="form-control" placeholder="Your Email *"  id="emailinput" [(ngModel)]="emailinput" name="emailinput"/>
+    
+    
+        <input type="text" class="form-control" placeholder="Your Phone *"  id="phoneinput" [(ngModel)]="phoneinput" name="phoneinput"/>
+ 
+        <input type="submit" class="btnSubmit" (click)="onClick()" value="Add User" />
+        <!-- <input type="submit" class="btnSubmit" (click)="onClick(document.getElementById('usernameinput')[0].value, document.getElementById('emailinput')[0].value, document.getElementById('phoneinput')[0].value)" value="Add User" /> -->
+        <!-- <input type="submit" class="btnSubmit" (click)="onClick(this.usernameinput.nativeElement.value, this.emailinput.nativeElement.value, this.phoneinput.nativeElement.value)" value="Add User" /> -->
+    </div>
+</form>

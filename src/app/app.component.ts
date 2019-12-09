@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { User } from './user';
+import { USERS } from './mock-users';
 @Component({
   selector: 'app-root',
   // template: `
@@ -12,9 +13,9 @@ import { User } from './user';
 })
 export class AppComponent {
   title = 'module2';
-  users: User[];
+  users: User[] = USERS;
   userAdded($event: User[]) {
     this.users = $event
-    console.log("parent recieved users");
+    console.log("parent recieved users"+ this.users);
   }
 }
