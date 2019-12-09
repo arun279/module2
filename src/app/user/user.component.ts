@@ -13,7 +13,6 @@ export class UserComponent implements OnInit {
   @Output() importedUsersChange = new EventEmitter<User[]>();
 
   users: User[] = USERS;
-//  users: User[] = this.importedUsers;
   constructor() { }
   selectedUser = new User;
   displayDetails(username: string) {

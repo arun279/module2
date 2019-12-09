@@ -3,11 +3,6 @@ import { User } from './user';
 import { USERS } from './mock-users';
 @Component({
   selector: 'app-root',
-  // template: `
-  //   <h1>Module 2</h1>
-  //   <app-admin (eventClicked)="userAdded($event)"></app-admin>
-  //   <app-user></app-user>
-  // `,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
