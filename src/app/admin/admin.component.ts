@@ -22,7 +22,6 @@ export class AdminComponent implements OnInit {
   @Output() eventClicked = new EventEmitter<User[]>();
 
   onClick(): void {    
-    console.log("caught: " + this.usernameinput);
     this.user = {username: this.usernameinput, email: this.emailinput, phone: this.phoneinput};
     this.users.push(this.user);
     this.eventClicked.emit(this.users);

@@ -16,10 +16,8 @@ export class UserComponent implements OnInit {
   constructor() { }
   selectedUser = new User;
   displayDetails(username: string) {
-    console.log("inside displayDetails");
     this.users.forEach(element => {
       if (element.username == username) {
-        console.log("found" + element.email);
         this.selectedUser = element;
       }
     });

@@ -11,6 +11,5 @@ export class AppComponent {
   users: User[] = USERS;
   userAdded($event: User[]) {
     this.users = $event
-    console.log("parent recieved users"+ this.users);
   }
 }
