@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, NgModule } from '@angular/core';
-import { USERS } from '../mock-users';
 import { User } from '../user';
+import { UsersService } from '../users.service';
 
 @Component({
   selector: 'app-user',
@@ -8,14 +8,16 @@ import { User } from '../user';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-
-  @Input() importedUsers: User[];
-  @Output() importedUsersChange = new EventEmitter<User[]>();
-
-  users: User[] = USERS;
-  constructor() { }
+  users: User[];
+  constructor(private usersService: UsersService) { }
   selectedUser = new User;
+
+  getUsers(): void {
+    this.usersService.getUsers().subscribe(users => this.users = users);
+  }
+
   displayDetails(username: string) {
+    this.getUsers();
     this.users.forEach(element => {
       if (element.username == username) {
         this.selectedUser = element;
@@ -24,6 +26,6 @@ export class UserComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getUsers();
   }
-
 }

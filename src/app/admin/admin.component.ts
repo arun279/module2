@@ -1,29 +1,33 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { USERS } from '../mock-users';
+import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
+import { UsersService } from '../users.service';
 
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css']
 })
-export class AdminComponent implements OnInit {
 
+export class AdminComponent implements OnInit {
   usernameinput: string = "";
   emailinput: string = "";
   phoneinput: number = 0;
 
-  constructor() { }
+  users: User[];
+  user: User;
+
+  constructor(private usersService: UsersService) { }
+  
+  getUsers(): void {
+    this.usersService.getUsers().subscribe(users => this.users = users);
+  }
 
   ngOnInit() {
+    this.getUsers();
   }
-  users: User[] = USERS;
-  user: User;
-  @Output() eventClicked = new EventEmitter<User[]>();
 
   onClick(): void {    
     this.user = {username: this.usernameinput, email: this.emailinput, phone: this.phoneinput};
-    this.users.push(this.user);
-    this.eventClicked.emit(this.users);
+    this.usersService.add(this.user);
   }
 }
