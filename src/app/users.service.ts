@@ -6,9 +6,9 @@ import { Observable, of } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class UsersService {
 
-  users: User[] = USERS;
+export class UsersService {
+  users: User[] = [];
 
   getUsers(): Observable<User[]> {
     return of(this.users);
