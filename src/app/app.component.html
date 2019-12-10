@@ -1,10 +1,6 @@
-<!-- <h1>Module 2</h1>
-<app-admin (eventClicked)="userAdded($event)"></app-admin>
-<app-user></app-user> -->
-
 <div class="container login-container">
     <div class="row">
         <app-admin (eventClicked)="userAdded($event)"></app-admin>
-        <app-user></app-user>
+        <app-user [importedUsers]="users"></app-user>
     </div>
 </div>

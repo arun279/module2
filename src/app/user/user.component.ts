@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, NgModule } from '@angular/core';
 import { USERS } from '../mock-users';
 import { User } from '../user';
 
@@ -8,6 +8,9 @@ import { User } from '../user';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
+
+  @Input() importedUsers: User[];
+  @Output() importedUsersChange = new EventEmitter<User[]>();
 
   users: User[] = USERS;
   constructor() { }
